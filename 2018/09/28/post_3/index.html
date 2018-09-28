@@ -24,102 +24,82 @@
 
 <body class="loading">
     <div id="loader"></div>
-    <div class="nav">
-    <ul id="menu-menu" class="menu">
-        
-        <li class="  menu-item menu-item-type-post_type menu-item-object-page">
-            <a href="https://github.com/Charm-J" title="Github" target="_blank" rel="noopener">Github</a>
-        </li>
-        
-    </ul>
-    <p id="copyright">
-        &copy; 2018 DJ.
-        Powered by <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a>
-        Theme <a href="https://github.com/Fechin/hexo-theme-diaspora" title="Diaspora" target="_blank" rel="noopener">Diaspora</a>
-        by Fechin
-    </p>
-</div>
-
-<div id="container">
-    
-<div id="screen">
-    <div id="mark">
-        <div class="layer" data-depth="0.4">
-            <img src="/img/welcome-cover.jpg" id="cover" crossorigin="anonymous" width="1920" height="1080">
-        </div>
-    </div>
-    <div id="vibrant">
-        <svg viewBox="0 0 2880 1620" height="100%" preserveAspectRatio="xMaxYMax slice">
-            <polygon opacity="0.7" points="2000,1620 0,1620 0,0 600,0 "/>
-        </svg>
-        <div></div>
-    </div>
-    <div id="header">
+    <div id="single">
+    <div id="top" style="display: block;">
+    <div class="bar" style="width: 0;"></div>
+    <a class="icon-home image-icon" href="javascript:;"></a>
+    <div title="播放/暂停" class="icon-play"></div>
+    <h3 class="subtitle">堆(Heap)和非堆(Non-heap)内存</h3>
+    <div class="social">
+        <!--<div class="like-icon">-->
+            <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
+        <!--</div>-->
         <div>
-            <a class="image-logo" href="/"></a>
-            <div class="icon-menu switchmenu"></div>
+            <div class="share">
+                <a title="获取二维码" class="icon-scan" href="javascript:;"></a>
+            </div>
+            <div id="qr"></div>
         </div>
     </div>
-    
-    <div id="post0">
-        <p>九月 28, 2018</p>
-        <h2><a href="/2018/09/28/post_4/" title="不容错过的Docker命令" class="posttitle">不容错过的Docker命令</a></h2>
-        <p class="summary">安装
-官方文档Linux下安装(CentOS 7.x)
-yum install -y docker
-查看版本 do...</p>
-    </div>
-    
+    <div class="scrollbar"></div>
 </div>
+    <div class="section">
+        <div class="article">
+    <div class='main'>
+        <h1 class="title">堆(Heap)和非堆(Non-heap)内存</h1>
+        <div class="stuff">
+            <span>九月 28, 2018</span>
+            
 
-    <div id="primary">
+        </div>
+        <div class="content markdown">
+            <p><img src="https://images.unsplash.com/photo-1538045999107-215cc24b36ce?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=bcb3c8e8f95dde29adee340f93d59bd2&amp;dpr=1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80&amp;cs=tinysrgb" alt=""></p>
+<ul>
+<li><p>按照官方的说法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配，堆是在 Java 虚拟机启动时创建的。在JVM中堆之外的内存称为非堆内存(Non-heap memory)”</span><br></pre></td></tr></table></figure>
+<p>  可以看出JVM主要管理两种类型的内存：堆和非堆（非堆即常说的栈）<br>  简单来说堆就是Java代码可及的内存，是留给开发人员使用的<br>  非堆就是JVM留给 自己用的，所以方法区、JVM内部处理或优化所需的内存、每个类结构(如运行时常数池、字段和方       法数据)以及方法和构造方法的代码都在非堆内存中</p>
+</li>
+<li><h5 id="堆内存分配"><a href="#堆内存分配" class="headerlink" title="堆内存分配:"></a>堆内存分配:</h5><p>  JVM初始分配的内存由-Xms指定，默认是物理内存的<strong><strong>1/64</strong></strong><br>  JVM最大分配的内存由-Xmx指定，默认是物理内存的<strong><strong>1/4</strong></strong><br>  默认空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制<br>  空余堆内存大于70%时，JVM会减少堆直到 -Xms的最小限制<br>  因此服务器一般设置-Xms、-Xmx相等以避免在每次GC后调整堆的大小</p>
+</li>
+<li><h5 id="非堆内存分配"><a href="#非堆内存分配" class="headerlink" title="非堆内存分配:"></a>非堆内存分配:</h5><p>  JVM使用-XX:PermSize设置非堆内存初始值，默认是物理内存的<strong><strong>1/64</strong></strong><br>  由XX:MaxPermSize设置最大非堆内存的大小，默认是物理内存的<strong><strong>1/4</strong></strong></p>
+</li>
+<li><h5 id="JVM参数举例："><a href="#JVM参数举例：" class="headerlink" title="JVM参数举例："></a>JVM参数举例：</h5><p>  -vmargs -Xms128M -Xmx512M -XX:PermSize=64M -XX:MaxPermSize=128M<br>  -vmargs说明后面是VM的参数，所以后面的其实都是JVM的参数了<br>  -Xms128m JVM初始分配的堆内存<br>  -Xmx512m JVM最大允许分配的堆内存，按需分配<br>  -XX:PermSize=64M JVM初始分配的非堆内存<br>  -XX:MaxPermSize=128M JVM最大允许分配的非堆内存，按需分配</p>
+</li>
+</ul>
+
+            <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
+            <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
+                <source type="audio/mpeg" src="">
+            </audio>
+            
+                <ul id="audio-list" style="display:none">
+                    
+                        <li title='0' data-url='http://link.hhtjim.com/163/5146554.mp3'></li>
+                    
+                        <li title='1' data-url='http://link.hhtjim.com/qq/001faIUs4M2zna.mp3'></li>
+                    
+                </ul>
+            
+        </div>
         
-<div class="post">
-    <a href="/2018/09/28/post_3/" title="堆(Heap)和非堆(Non-heap)内存">
-        <img src="https://thyrsi.com/t6/377/1538111222x1822611437.jpg" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 28, 2018</p>
-        <h3><a href="/2018/09/28/post_3/" title="堆(Heap)和非堆(Non-heap)内存" class="posttitle">堆(Heap)和非堆(Non-heap)内存</a></h3>
-        <p>
-
-按照官方的说法：
-1“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配，堆是在 Java 虚拟机启动时创建的。在JV...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2018/09/20/post_2/" title="岁月静好，浅语安然">
-        <img src="https://images.unsplash.com/photo-1537341976909-9f313bd9b5cd?ixlib=rb-0.3.5&s=c175d54d7c1caa1344ca54d7023f4018&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 20, 2018</p>
-        <h3><a href="/2018/09/20/post_2/" title="岁月静好，浅语安然" class="posttitle">岁月静好，浅语安然</a></h3>
-        <p>
-　　初冬时节，听着雨声静心书简今生有感，半世离苦得乐，顺应因果循环积善成德。——仰望月色
-　　天渐寒，飘雨时分有音乐相伴，不再为世俗牵绊，抽身事外梳理思...</p>
-    </div>
-</div>
-
-
-<div class="post">
-    <a href="/2018/09/20/post_1/" title="红尘炼心">
-        <img src="https://images.unsplash.com/photo-1537326823431-816e18a6eb65?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5dea620e6f587d3c1ebbf680709f8e43&dpr=1&auto=format&fit=crop&w=1000&q=80&cs=tinysrgb" class="cover" width="680" height="440">
-    </a>
-    <div class="else">
-        <p>九月 20, 2018</p>
-        <h3><a href="/2018/09/20/post_1/" title="红尘炼心" class="posttitle">红尘炼心</a></h3>
-        <p>繁华的城市中心，带着物欲横流的气息。我们宠爱着自己，用自己的能力去尽量过有品质的生活。此时，室内花开。我亦对生活更加柔和，有很多热爱填满生活的角落。发自内...</p>
-    </div>
-</div>
+    <div id='gitalk-container' class="comment link"
+        data-ae='false'
+        data-ci='5b10d1e25a3d98468ffb'
+        data-cs='504da2af021582ccd66dcb8d2ee40059a7e1ab7d'
+        data-r='Charm-J.github.io'
+        data-o='Charm-J'
+        data-a='Charm-J'
+        data-d='true'
+    >查看评论</div>
 
 
     </div>
     
 </div>
-<div id="preview"></div>
 
+
+    </div>
+</div>
 </body>
 <script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 <script src="//lib.baomitu.com/jquery/1.8.3/jquery.min.js"></script>
