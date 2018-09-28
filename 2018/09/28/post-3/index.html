@@ -12,9 +12,10 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="Charm-J,"> 
     <meta name="description" content="温暖小窝...,
-　　初冬时节，听着雨声静心书简今生有感，半世离苦得乐，顺应因果循环积善成德。——仰望月色
-　　天渐寒，飘雨时分有音乐相伴，不再为世俗牵绊，抽身事外梳理思绪，还原心底曾有的微澜。
-　　伤害过自己的人,"> 
+
+按照官方的说法：
+
+“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配，堆是在 Java 虚拟机启动时创建的。在JVM中堆之外的内存称为非堆内存(Non-hea,"> 
     <meta name="author" content="DJ"> 
     <link rel="alternative" href="/atom.xml" title="Charm Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -29,7 +30,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">岁月静好，浅语安然</h3>
+    <h3 class="subtitle">堆(Heap)和非堆(Non-heap)内存</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -46,32 +47,39 @@
     <div class="section">
         <div class="article">
     <div class='main'>
-        <h1 class="title">岁月静好，浅语安然</h1>
+        <h1 class="title">堆(Heap)和非堆(Non-heap)内存</h1>
         <div class="stuff">
-            <span>九月 20, 2018</span>
+            <span>九月 28, 2018</span>
             
 
         </div>
         <div class="content markdown">
-            <p><img src="https://images.unsplash.com/photo-1537341976909-9f313bd9b5cd?ixlib=rb-0.3.5&amp;s=c175d54d7c1caa1344ca54d7023f4018&amp;dpr=1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80&amp;cs=tinysrgb" alt=""></p>
-<p>　　初冬时节，听着雨声静心书简今生有感，半世离苦得乐，顺应因果循环积善成德。——仰望月色</p>
-<p>　　天渐寒，飘雨时分有音乐相伴，不再为世俗牵绊，抽身事外梳理思绪，还原心底曾有的微澜。</p>
-<p>　　伤害过自己的人已不再记恨，不再让其困扰生活，逐渐模糊于视线，消散于记忆里。不提，不感觉存在；提起，已觉路人一个。这样挺好，过得好比什么都重要。</p>
-<p>　　想开，人生十有八九会遇到不如意，伤心也好，痛苦也罢，调整心态要经得住生活考验。</p>
-<p>　　看开，起落的人生谁都逃不过，不如面对：“喜便乐，悲哭泣，释放心情凝聚能量重新崛起。</p>
-<p>　　坚信：“人学好，善行道；勤补拙，言必行；因与果，终会好。”</p>
-<p>　　坚守：“诚为本，守承诺；不忘本，不贪婪；孝为先，爱之理。”</p>
-<p>　　人之间，太多爱恨交织，苍忙几十载，要学着放下恨，静思己过，记挂别人的好，拥有一颗感恩的心去学会包容，时刻约束起伏的不忿。要知道你伤心，别人依然在享受自己的快乐，不会因你有所改变。牵动嘴角微笑，好运自来；愁苦满面，烦恼自寻。</p>
-<p>　　人生悲欢，最终的结局谁也难料。没有死对头，只有心锁，心头落锁自己只会在黑暗的角落暗殇。打开那把锁，便会迎来满眼景色，眉梢舒展。</p>
-<p>　　你快乐，我祝福；你伤心，我黯然。惩罚，伤害加重；宽容，也是解脱。</p>
-<p>　　缘分搁浅，也许真的不适合，也许在错综的路上棒喝使自己清醒。</p>
-<p>　　再牵手，浮躁消褪，不再轻言爱恨情仇，不再风花雪月里狂奔。饿了，有人端口饭吃；渴了，有人端口水喝。冷了，有人关心添衣；痛了，有人相伴安慰便好。</p>
-<p>　　时间催人老，平淡日子过出暖流，便是有个人用心呵护不离左右。</p>
-<p>　　有人管制，有人唠叨也是幸福，那是一种真切关心与疼爱。懂的人，总会默默改变着自己，做事更加贴心，为的只是不让其担心，不让殇痛再次上演。</p>
-<p>　　年轻，看到的只是情感表面的直白，浪漫璀璨的爱情表白，褪色后的情感经历风雨洗礼，需要的已丢掉，珍惜的已不在。</p>
-<p>　　中年，生活的油烟已熏染出了味道，淡了，加盐；苦了，加糖。不再是唯我独尊，而是，有你在身边，一切安然便好。</p>
-<p>　　谁都不是完人，释放优点，克服缺点，相互包容便是生活佳境。</p>
-<p>　　不羡慕，不怨恨，独善其身，岁月静好。</p>
+            <p><img src="https://images.unsplash.com/photo-1538045999107-215cc24b36ce?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=bcb3c8e8f95dde29adee340f93d59bd2&amp;dpr=1&amp;auto=format&amp;fit=crop&amp;w=1000&amp;q=80&amp;cs=tinysrgb" alt=""></p>
+<ul>
+<li><p>按照官方的说法：</p>
+<blockquote>
+<pre><code>“Java 虚拟机具有一个堆，堆是运行时数据区域，所有类实例和数组的内存均从此处分配，堆是在 Java 虚拟机启动时创建的。在JVM中堆之外的内存称为非堆内存(Non-heap memory)”
+</code></pre></blockquote>
+<p>  可以看出JVM主要管理两种类型的内存：堆和非堆（非堆即常说的栈）<br>  简单来说堆就是Java代码可及的内存，是留给开发人员使用的<br>  非堆就是JVM留给 自己用的，所以方法区、JVM内部处理或优化所需的内存、每个类结构(如运行时常数池、字段和方       法数据)以及方法和构造方法的代码都在非堆内存中</p>
+</li>
+<li><p>#####堆内存分配:</p>
+  <font face="微软雅黑">JVM初始分配的内存由-Xms指定，默认是物理内存的<strong><strong>1/64</strong></strong><br>  JVM最大分配的内存由-Xmx指定，默认是物理内存的<strong><strong>1/4</strong></strong><br>  默认空余堆内存小于40%时，JVM就会增大堆直到-Xmx的最大限制<br>  空余堆内存大于70%时，JVM会减少堆直到 -Xms的最小限制<br>  因此服务器一般设置-Xms、-Xmx相等以避免在每次GC后调整堆的大小<br>  </font>
+
+
+</li>
+</ul>
+<ul>
+<li>#####非堆内存分配:  <font face="微软雅黑">JVM使用-XX:PermSize设置非堆内存初始值，默认是物理内存的                    <strong><strong>1/64</strong></strong><br>  由XX:MaxPermSize设置最大非堆内存的大小，默认是物理内存的<strong><strong>1/4</strong></strong><br>  </font>
+
+
+</li>
+</ul>
+<ul>
+<li>#####JVM参数举例：  <font face="微软雅黑" color="SeaGreen">-vmargs -Xms128M -Xmx512M -XX:PermSize=64M -            XX:MaxPermSize=128M<br>  -vmargs说明后面是VM的参数，所以后面的其实都是JVM的参数了<br>  -Xms128m JVM初始分配的堆内存<br>  -Xmx512m JVM最大允许分配的堆内存，按需分配<br>  -XX:PermSize=64M JVM初始分配的非堆内存<br>  -XX:MaxPermSize=128M JVM最大允许分配的非堆内存，按需分配<br>  </font>
+
+
+</li>
+</ul>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -165,6 +173,18 @@
 </div>
 
 
+
+<!-- Google Analytics -->
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-126088215-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
 
 
 </html>
